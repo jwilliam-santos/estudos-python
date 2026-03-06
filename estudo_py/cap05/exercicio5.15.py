@@ -18,20 +18,20 @@ print('    3    /   4.00 ')
 print('    5    /   7.00' )
 print('    9    /    8.00')
 codigo_produto = input('Digite o codigo so seu produto de acordo com a ultima tabela')
-quantidade = int(input('digite a quantida do seu produto que vc deseja comprar'))
-if codigo_produto == '1' and quantidade >= 1:
+quantidade = int(input('digite a quantidade do seu produto que vc deseja comprar'))
+if codigo_produto == ' 1' and quantidade >= 1:
     preço =  quantidade * 0.50
     print(f'o preço final so seu produto deu: {preço}')
-elif codigo_produto == '2' and quantidade >= 1:
+elif codigo_produto == ' 2' and quantidade >= 1:
     preço = quantidade * 1
     print(f' o preço final da sua compra deu {preço}')
-elif codigo_produto == '3' and quantidade >= 1:
+elif codigo_produto == ' 3' and quantidade >= 1:
     preço = quantidade * 4
     print(f'o preço do produto da sua compra deu {preço}')
-elif codigo_produto =='5'and quantidade >= 1:
+elif codigo_produto ==' 5'and quantidade >= 1:
     preço = quantidade * 7 
     print(f'O preço final da sua conta deu: {preço}')
-elif codigo_produto == '9' and quantidade >=1:
+elif codigo_produto == ' 9' and quantidade >=1:
     preço = quantidade * 8
     print(f'o preço final de sua compra deu {preço}')
 else:
