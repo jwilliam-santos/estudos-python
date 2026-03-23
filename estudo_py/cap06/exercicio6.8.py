@@ -27,3 +27,5 @@ while x < len(L):
    x +=1
 if achou:
    print(f'{p} achado na posição {x}')
+else:
+   print('Não foi achado')
