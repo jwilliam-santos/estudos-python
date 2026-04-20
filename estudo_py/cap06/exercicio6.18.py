@@ -32,7 +32,7 @@ while fim > 1:
             L[x] = L[x + 1]
             L[x + 1] = temp
         x += 1
-    if not trocou:
+    if not trocou: 
         break
     fim -= 1
 for e in L:
