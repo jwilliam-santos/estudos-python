@@ -3,7 +3,7 @@
 #ou gravada.
 agenda = []
 alterada = False
-
+a = True
 def pede_nome():
     return input("Nome: ")
 
