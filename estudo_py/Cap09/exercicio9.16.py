@@ -1,0 +1,2 @@
+#Explique como os campos nome e telefone são armazenados no arquivo de saída.
+#Resposta:Quando o usuario digita 1 (que ativa a def novo), e chamado a def pede nome, e a def pede telefone, que são armazenadas em uma lista dentro da lista agenda da forma "[nome,telefone]"
