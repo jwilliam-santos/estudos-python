@@ -59,7 +59,7 @@ def pede_aniversario(padrão=""):
         return resposta
 
 
-def mostra_dados(nome, telefone,tefix,tefres,teftrab,email,aniversario):  #PRONTO
+def mostra_dados(nome, telefone,tefix,tefres,teftrab,email,aniversario):  
     print(f"Nome: {nome} Telefone: {telefone} Telefone Fixo : {tefix} Telefone Residencial : {tefres} Telefone do Trabalho {teftrab} Email:{email} Aniversario {aniversario} ")
     
 
@@ -76,7 +76,7 @@ def pesquisa(nome):
     return None
 
 
-def novo(): #PRONTO
+def novo(): 
     global agenda,alterada
     nome = pede_nome()
     if pesquisa(nome)  is not None:
@@ -107,7 +107,7 @@ def apaga():
         print("Nome não encontrado.")
 
 
-def altera(): #ARRUMAR
+def altera(): 
     global  alterada
     p = pesquisa(pede_nome())
     if p is not None:
@@ -137,7 +137,7 @@ def altera(): #ARRUMAR
         print("Nome não encontrado.")
 
 
-def lista(): #mostrar o fixo, trabalho, residencial
+def lista(): 
     print("\nAgenda\n\n------")
     for e in agenda:
         mostra_dados(e[0], e[1],e[2],e[3],e[4],e[5],e[6])
@@ -150,8 +150,8 @@ def lê():
     with open(nome_arquivo, "r", encoding="utf-8") as arquivo:
         agenda = []
         for linha in arquivo.readlines():
-            nome, telefone,email,aniversario,pede_fixo,pede_residencial,pede_Trabalho = linha.strip().split("#") #olhar linha de baixo e fazer "igual"
-            agenda.append([nome, telefone,pede_fixo,pede_residencial,pede_Trabalho,email,aniversario]) #add o do trabalho, fixo e residencial           PRONTO 
+            nome, telefone,email,aniversario,pede_fixo,pede_residencial,pede_Trabalho = linha.strip().split("#") 
+            agenda.append([nome, telefone,pede_fixo,pede_residencial,pede_Trabalho,email,aniversario]) 
     with open("pt3ex9.28.txt","w") as pt2:
         pt2.write(nome_arquivo)
 
@@ -160,7 +160,7 @@ def grava():
     nome_arquivo = pede_nome_arquivo()
     with open(nome_arquivo, "w", encoding="utf-8") as arquivo:
         for e in agenda:
-            arquivo.write(f"{e[0]}#{e[1]}#{e[2]}#{e[3]}#{e[4]}#{e[5]}#{e[6]}\n") #PRONTO
+            arquivo.write(f"{e[0]}#{e[1]}#{e[2]}#{e[3]}#{e[4]}#{e[5]}#{e[6]}\n") 
         alterada = False
     with open("pt2ex9.28.txt","w") as pt2:
         pt2.write(nome_arquivo)
