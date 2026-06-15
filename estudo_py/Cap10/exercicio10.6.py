@@ -12,7 +12,7 @@ class Televisão:
             return self.canal
         else:
             self.canal = self.canal_max
-            
+            return self.canal
     def muda_canal_para_cima(self):
         if self.canal + 1 <= self.canal_max:
             self.canal += 1
