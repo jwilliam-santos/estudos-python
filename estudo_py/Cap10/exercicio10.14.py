@@ -59,7 +59,7 @@ class ContaEspecial(Conta):
             self.operações.append(["SAQUE", valor])
             return False
      
-    def mostrar(self): # On This Def: Exibir Limite Para o Saque, e o Total Disponivel Pro saque
+    def mostrar(self): 
         print(f"Extrato CC N° {self.número}\n")
         self.total = self.saldo + self.limite
         for operação in self.operações:
