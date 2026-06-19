@@ -1,0 +1,66 @@
+#Crie uma função usando verifica_padrão que valide números de celulares.
+#Um celular tem 9 dígitos depois do DDD.
+#Por exemplo:(92)99812-1103
+from functools import partial
+
+
+def número(entrada, qmin, qmax):
+    num = 0
+    for caractere in entrada:
+        if caractere.isnumeric():
+            num += 1
+        else:
+            break
+    if qmin <= num <= qmax:
+        return num, 0, num - 1
+    else:
+        return -1, -1, -1
+
+
+def sequência(entrada, padrão):
+    posição, posição_max = 0, len(padrão)
+    for caractere in entrada:
+        if caractere == padrão[posição]:
+            posição += 1  
+        else:
+            break  
+        if posição == posição_max:  
+            return 1, 0, posição - 1
+    return -1, -1, -1
+
+
+def verifica_padrão(entrada, padrões):
+    posição = 0
+    for padrão in padrões:
+        achou, _, fim = padrão(entrada[posição:])
+        if achou > 0:
+            posição += fim + 1
+        else:
+            return -1, -1, -1
+    return 1, 0, posição - 1
+
+
+def numero_celular(entrada):
+    padrão = [
+        partial(sequência, padrão="("),
+        partial(número, qmin=2, qmax=3),
+        partial(sequência, padrão=")"),
+        partial(número, qmin=5, qmax=5),
+        partial(sequência, padrão="-"),
+        partial(número, qmin=4, qmax=4),
+    ]
+    achou, _, _ = verifica_padrão(entrada, padrão)
+    return achou > 0
+
+
+entradas = [
+    "(92)99999-9999",  
+    "(11)99999-999",  
+    "(2)99999-9999",  
+    "(12)9999999999",  
+    "(312)9999999999",  
+    "(312)99999-9999",  
+]
+
+for entrada in entradas:
+    print(f"{entrada}: é um celular? {'Sim' if numero_celular(entrada) else 'Não'}")
